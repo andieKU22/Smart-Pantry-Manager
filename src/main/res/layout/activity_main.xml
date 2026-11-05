@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Displays the name of the application. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Smart Pantry Manager"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp" />
+
+    <!-- Displays a short explanation of the screen. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage the ingredients currently in your pantry."
+        android:textSize="16sp"
+        android:paddingBottom="10dp" />
+
+    <!-- Opens the Add Ingredient screen. -->
+    <Button
+        android:id="@+id/addIngredientButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Ingredient" />
+
+    <!-- Opens the Suggested Recipes screen. -->
+    <Button
+        android:id="@+id/suggestedRecipesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suggested Recipes" />
+
+    <!-- Opens the Settings screen. -->
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings" />
+
+    <!-- Heading for the pantry list. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Pantry"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="15dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Displays pantry items stored in SQLite. -->
+    <ListView
+        android:id="@+id/pantryListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

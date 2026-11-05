@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Main vertical layout for the Suggested Recipes screen. -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Screen title. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suggested Recipes"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp" />
+
+    <!-- Explains the strict-matching rule to the user. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="These recipes can be made using only the ingredients currently in your pantry."
+        android:textSize="15sp"
+        android:paddingBottom="15dp" />
+
+    <!-- Displays the list of matching recipes. -->
+    <ListView
+        android:id="@+id/recipeListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Shown when zero recipes match the pantry. -->
+    <TextView
+        android:id="@+id/noRecipesText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No recipes match your pantry yet - add more ingredients."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone" />
+
+    <!-- Returns to the Pantry screen. -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Pantry"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

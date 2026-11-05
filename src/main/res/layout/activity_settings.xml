@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Main vertical layout for the Settings screen. -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Screen title. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:paddingBottom="20dp" />
+
+    <!-- Toggle for expiring-soon alerts. -->
+    <Switch
+        android:id="@+id/expiryAlertSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable expiring-soon alerts"
+        android:textSize="16sp"
+        android:paddingBottom="15dp" />
+
+    <!-- Label for units preference. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preferred Units"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Dropdown for preferred units. -->
+    <Spinner
+        android:id="@+id/preferredUnitsSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp" />
+
+    <!-- Saves the settings. -->
+    <Button
+        android:id="@+id/saveSettingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Settings"
+        android:layout_marginTop="20dp" />
+
+    <!-- Returns to the Pantry screen. -->
+    <Button
+        android:id="@+id/backToPantryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Pantry" />
+
+</LinearLayout>
