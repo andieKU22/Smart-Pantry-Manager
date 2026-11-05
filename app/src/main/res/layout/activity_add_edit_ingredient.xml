@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Creates the main vertical layout for the Add/Edit screen. -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Allows the form to scroll if the screen is small. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Screen title. -->
+        <TextView
+            android:id="@+id/formTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Ingredient"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:paddingBottom="20dp" />
+
+        <!-- Label for ingredient name. -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredient Name"
+            android:textStyle="bold" />
+
+        <!-- Input field for ingredient name. -->
+        <EditText
+            android:id="@+id/ingredientNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Example: Milk"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <!-- Label for quantity. -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textStyle="bold"
+            android:paddingTop="15dp" />
+
+        <!-- Input field for quantity. -->
+        <EditText
+            android:id="@+id/quantityInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Example: 2"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+
+        <!-- Label for unit. -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unit"
+            android:textStyle="bold"
+            android:paddingTop="15dp" />
+
+        <!-- Dropdown for measurement units. -->
+        <Spinner
+            android:id="@+id/unitSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Label for expiry date. -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date (Optional)"
+            android:textStyle="bold"
+            android:paddingTop="15dp" />
+
+        <!-- Input field for expiry date. -->
+        <EditText
+            android:id="@+id/expiryDateInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="YYYY-MM-DD"
+            android:inputType="text"
+            android:padding="12dp" />
+
+        <!-- Saves the new or edited ingredient. -->
+        <Button
+            android:id="@+id/saveIngredientButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Ingredient"
+            android:layout_marginTop="25dp" />
+
+        <!-- Cancels the operation and returns to the previous screen. -->
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+</ScrollView>

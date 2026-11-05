@@ -1,1 +1,15 @@
-/build
+# Local Android Studio / Gradle configuration
+local.properties
+.gradle/
+.idea/
+*.iml
+
+# Build outputs and generated files
+**/build/
+**/generated/
+**/outputs/
+**/tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
