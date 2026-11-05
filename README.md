@@ -1,50 +1,90 @@
 # Smart Pantry Manager
 
-A Java Android application for tracking pantry ingredients and suggesting recipes only when all required ingredients and quantities are available.
+A Java-based Android application for managing pantry ingredients and suggesting recipes when all required ingredients and quantities are available.
 
 **Repository:** https://github.com/andieKU22/Smart-Pantry-Manager
 
 ## Technology
+
 - Java and Android Studio
-- SQLite via `SQLiteOpenHelper`
+- SQLite using `SQLiteOpenHelper`
+- Android Activities and explicit Intents
 - Custom ListView adapters
-- Activities and explicit Intents
-- Android XML manifest and theme resources
+- XML layouts, resources, and Android manifest
 
-## Database choice
-SQLite keeps pantry data locally on the device, persists it between sessions, and does not require network access or a separate server. The database is designed to store pantry items, recipes, recipe ingredients, and settings. The recipe catalogue is seeded when the database is first created.
+## Project structure
 
-## Screens
-1. **Pantry list:** view pantry items; select an item to edit; long-press to delete.
-2. **Add/Edit Ingredient:** validate ingredient details, quantity, unit, and optional date.
-3. **Suggested Recipes:** show recipes that pass the strict ingredient and quantity check.
-4. **Recipe Detail:** display required ingredients and preparation steps.
-5. **Settings:** store a user preference.
+```text
+Smart-Pantry-Manager/
+├── app/
+│   ├── build.gradle.kts
+│   └── src/
+│       ├── main/
+│       │   ├── AndroidManifest.xml
+│       │   ├── assets/
+│       │   ├── java/com/example/smartpantrymanager/
+│       │   └── res/
+│       ├── test/
+│       └── androidTest/
+├── gradle/
+│   ├── libs.versions.toml
+│   └── wrapper/
+├── build.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── settings.gradle.kts
+```
 
-## Run in Android Studio
-1. Install Android Studio and a compatible Android SDK.
-2. Open the `SmartPantryManager` project folder containing `settings.gradle`.
-3. Allow Gradle sync to finish; an internet connection may be required to download Gradle dependencies.
-4. Create an Android Virtual Device (AVD) or connect an Android phone with USB debugging enabled.
-5. Select the app configuration and click **Run**.
+## Main features
 
-If Android Studio reports that the Gradle wrapper is missing, use Android Studio's Gradle tooling or install a compatible Gradle distribution and generate the wrapper. Do not commit generated build caches.
+1. **Pantry management:** view, add, edit, and delete pantry ingredients.
+2. **Ingredient validation:** validate ingredient details and quantities.
+3. **Recipe suggestions:** suggest recipes only when all required ingredients are available in sufficient quantities.
+4. **Recipe details:** view recipe ingredients and preparation instructions.
+5. **Settings:** save a user preference locally.
 
-## Strict matching
-A recipe should be suggested only when every required ingredient is present in sufficient quantity. Partial matches must not appear in the main suggestions list. Verify ingredient-name normalization and unit conversion against the implementation before demonstrating these cases.
+## Database
 
-## Manual verification checklist
+The application uses SQLite to store pantry items, recipes, recipe ingredients, and settings on the device. The database does not require a separate server or network connection. The bundled database asset is located at `app/src/main/assets/smart_pantry.db`.
+
+## Requirements
+
+- Android Studio
+- A compatible Android SDK
+- JDK 11 or a JDK supported by the installed Android Gradle Plugin
+- Internet connection for the initial Gradle dependency download
+
+## Run the application
+
+1. Clone or download this repository.
+2. In Android Studio, select **Open** and choose the repository's root folder (the folder containing `settings.gradle.kts`).
+3. Allow Gradle sync to complete.
+4. Create an Android Virtual Device (AVD), or connect an Android phone with USB debugging enabled.
+5. Select the **app** run configuration and click **Run**.
+
+The Gradle wrapper is included. On Windows, you can also run:
+
+```powershell
+.\gradlew.bat :app:assembleDebug
+```
+
+## Manual testing checklist
+
 - [ ] Add a pantry item with a valid name, quantity, and unit.
-- [ ] Test empty names, invalid quantities, and zero quantity.
+- [ ] Test empty names and invalid or zero quantities.
 - [ ] Edit an existing item and confirm the change is saved.
 - [ ] Delete an item and confirm it disappears.
-- [ ] Close and reopen the app; confirm pantry data persists.
-- [ ] Add sufficient ingredients for a seeded recipe; confirm it appears in Suggested Recipes.
-- [ ] Remove or reduce one required ingredient; confirm the recipe no longer appears.
-- [ ] Open a recipe detail screen and inspect ingredients and preparation steps.
-- [ ] Change the settings preference, leave the screen, and return to check persistence.
+- [ ] Restart the app and confirm pantry data persists.
+- [ ] Add sufficient ingredients for a seeded recipe and confirm it appears in Suggested Recipes.
+- [ ] Remove or reduce one required ingredient and confirm the recipe is no longer suggested.
+- [ ] Open a recipe detail screen and inspect its ingredients and preparation steps.
+- [ ] Change the settings preference and confirm it persists.
 
-## Important notes
-- Confirm the app builds and runs in Android Studio before submission.
-- Check the assignment requirements and ensure the final repository includes the full Android Studio source project, not only documentation.
-- Commit meaningful changes as they are actually made. Do not fabricate commit history.
+## Repository hygiene
+
+Generated build outputs, IDE files, and machine-specific `local.properties` files are excluded through `.gitignore`. Do not commit local SDK paths or Gradle build caches.
+
+## Before submission
+
+Build and run the app in Android Studio, complete the manual testing checklist, and confirm that the submitted repository matches the version tested locally.
